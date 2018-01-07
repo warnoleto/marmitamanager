@@ -1,15 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Startup from '@/components/Startup'
+import Register from '@/components/Register'
 
-Vue.use(Router)
+Vue.use(Router, Register)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'Startup',
+      component: Startup
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
     }
   ]
 })
