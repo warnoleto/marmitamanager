@@ -1,11 +1,13 @@
 <template>
   <div>
+    <form class="md-6">
     <h1>Register</h1>
-    <input type="email" name="email" id="email" v-model="email" placeholder="email">
+    <input type="email" name="email" class="form-control" v-model="email" placeholder="email">
     <br>
-    <input type="password" name="password" id="password" v-model="password" placeholder="password">
+    <input type="password" name="password" class="form-control" v-model="password" placeholder="password">
     <br>
-    <button @click="register" type="submit">Register</button> 
+    <button @click="register" type="submit" class="btn btn-primary">Register</button> 
+    </form>
   </div>
 </template>
 
