@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 // eslint-disable-next-line
-import 'vue-strap'
+import VueStrap from 'vue-strap'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 
@@ -15,5 +15,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App: App, navbar: VueStrap.navbar, dropdown: VueStrap.dropdown }
 })
