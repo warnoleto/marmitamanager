@@ -4,8 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 // eslint-disable-next-line
-import vueStrap from 'vue-strap'
+import 'vue-strap'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap-theme.css'
 
 Vue.config.productionTip = false
 
