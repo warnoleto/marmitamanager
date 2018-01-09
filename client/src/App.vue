@@ -2,7 +2,7 @@
 
   <div id="app">
 
-    <my-navbar></my-navbar>
+    <vbs-navbar></vbs-navbar>
 
     <main role="main">
       <router-view/>
@@ -13,7 +13,7 @@
 
 <script>
 
-import Mynavbar from '@/components/Mynavbar'
+import VbsNavbar from '@/components/VbsNavbar'
 
 export default {
   name: 'app',
@@ -23,7 +23,7 @@ export default {
     }
   },
   components: {
-    'my-navbar': Mynavbar
+    'vbs-navbar': VbsNavbar
   }
 }
 </script>

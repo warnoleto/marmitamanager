@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <form class="md-6">
+  <div class="container">
+    <form>
     <h1>Register</h1>
     <input type="email" name="email" class="form-control" v-model="email" placeholder="email">
     <br>
