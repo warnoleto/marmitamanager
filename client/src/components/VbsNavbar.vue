@@ -1,49 +1,31 @@
 <template>
-  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" aria-expanded="false" @click="toggle()">
-            <span class="sr-only">Exibir Navegação</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#" >{{brand}}</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="navbar-collapse" :class="{collapse: isCollapsed}">
-          <ul class="nav navbar-nav">
-            <router-link tag="li" v-for="itm in routes" :key="itm.path"  :to="itm.path" active-class="active" :exact="true">
-              <a v-text="itm.label"></a>
-            </router-link>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+  <navbar placement="top" type="inverse">
+     <a slot="brand" href="/" title="Home" class="navbar-brand">{{brand}}</a>
+    <router-link tag="li" v-for="itm in routes" :key="itm.path"  :to="itm.path" active-class="active" :exact="true">
+      <a v-text="itm.label"></a>
+    </router-link>
+  </navbar>
 </template>
 
 <script>
 
 import myRouter from '@/router'
+import VueStrap from 'vue-strap'
 
 export default {
   name: 'VbsNavbar',
   data () {
     return {
-      brand: 'M.M',
-      isCollapsed: true
-    }
-  },
-  methods: {
-    toggle () {
-      this.isCollapsed = !this.isCollapsed
+      brand: 'M.M'
     }
   },
   computed: {
     routes () {
       return myRouter.options.routes
     }
+  },
+  components: {
+    navbar: VueStrap.navbar
   }
 }
 </script>
