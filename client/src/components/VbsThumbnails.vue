@@ -2,7 +2,7 @@
   <div class="container container-fluid">
       <div class="col-xs-6 col-md-3" v-for="item in items" v-bind:key="item.title">
           <div class="thumbnail">
-              <img :src="item.src" :alt="thumbnail-blank" >
+              <img :src="item.src" :alt="item.title" >
               <div class="caption">
                 <h3>{{item.title}}</h3>
                 <p>{{item.description}}</p>
