@@ -9,11 +9,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 
 Vue.config.productionTip = false
+Vue.component('navbar', VueStrap.navbar)
+Vue.component('dropdown', VueStrap.dropdown)
+Vue.component('bs-input', VueStrap.input)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App: App, navbar: VueStrap.navbar, dropdown: VueStrap.dropdown }
+  components: { App }
 })

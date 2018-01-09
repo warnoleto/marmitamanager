@@ -5,14 +5,11 @@
 </template>
 
 <script>
-import VueStrap from 'vue-strap'
+
 export default {
   data () {
     return {
     }
-  },
-  components: {
-    dropdown: VueStrap.dropdown
   }
 }
 </script>

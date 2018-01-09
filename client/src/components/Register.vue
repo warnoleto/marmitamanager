@@ -2,16 +2,11 @@
   <div class="container">
     <form class="col-md-4 col-md-offset-4">
       <h1>Registrar-se</h1>
-      <div class="form-group">
-        <label for="email">Endereço de Email</label>
-        <input id="email" type="email" name="email" class="form-control" v-model="email" placeholder="email">
-      </div>
       
-      <div class="form-group">
-        <label for="email">Password</label>
-        <input type="password" name="password" class="form-control" v-model="password" placeholder="password">
-      </div>
-      <br>
+      <bs-input label="Endereço de Email" v-model="email" placeholder="E-mail" required error="Informe o email" icon/></bs-input>
+      
+      <bs-input label="Password" v-model="password" type="password" placeholder="Password" required error="Informe o password" icon/></bs-input>
+
       <button @click="register" type="submit" class="btn btn-primary">Enviar</button> 
     </form>
   </div>
