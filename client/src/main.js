@@ -12,6 +12,11 @@ Vue.config.productionTip = false
 Vue.component('navbar', VueStrap.navbar)
 Vue.component('dropdown', VueStrap.dropdown)
 Vue.component('bs-input', VueStrap.input)
+Vue.component('modal', VueStrap.modal)
+Vue.component('v-select', VueStrap.select)
+Vue.component('tabs', VueStrap.tabs)
+Vue.component('tab', VueStrap.tab)
+Vue.component('datepicker', VueStrap.datepicker)
 
 /* eslint-disable no-new */
 new Vue({
