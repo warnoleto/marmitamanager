@@ -19,13 +19,10 @@ export default {
   data () {
     return {
       items: [
-          {title: 'item1', description: 'description of item 1', src: './static/thumbnail_blank.png'},
-          {title: 'item2', description: 'description of item 2', src: './static/thumbnail_blank.png'},
-          {title: 'item3', description: 'description of item 3', src: './static/thumbnail_blank.png'},
-          {title: 'item4', description: 'description of item 4', src: './static/thumbnail_blank.png'},
-          {title: 'item5', description: 'description of item 5', src: './static/thumbnail_blank.png'},
-          {title: 'item6', description: 'description of item 6', src: './static/thumbnail_blank.png'},
-          {title: 'item7', description: 'description of item 7', src: './static/thumbnail_blank.png'}
+          {title: 'item1', description: 'description of item 1', src: 'https://placehold.it/244x200?text=244x200'},
+          {title: 'item2', description: 'description of item 2', src: 'https://placehold.it/244x200?text=244x200'},
+          {title: 'item3', description: 'description of item 3', src: 'https://placehold.it/244x200?text=244x200'},
+          {title: 'item4', description: 'description of item 4', src: 'https://placehold.it/244x200?text=244x200'}
       ]
     }
   }

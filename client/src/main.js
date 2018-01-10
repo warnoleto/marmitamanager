@@ -17,6 +17,8 @@ Vue.component('v-select', VueStrap.select)
 Vue.component('tabs', VueStrap.tabs)
 Vue.component('tab', VueStrap.tab)
 Vue.component('datepicker', VueStrap.datepicker)
+Vue.component('carousel', VueStrap.carousel)
+Vue.component('slider', VueStrap.slider)
 
 /* eslint-disable no-new */
 new Vue({
