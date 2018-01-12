@@ -19,10 +19,10 @@ export default {
   data () {
     return {
       slides: [
-        {title: 'slide 1', description: 'description of slide 1', src: 'https://placehold.it/1200x800?text=First%20Slide'},
-        {title: 'slide 2', description: 'description of slide 2', src: 'https://placehold.it/1200x800?text=Second%20Slide'},
-        {title: 'slide 3', description: 'description of slide 3', src: 'https://placehold.it/1200x800?text=Third%20Slide'},
-        {title: 'slide 4', description: 'description of slide 4', src: 'https://placehold.it/1200x800?text=Fourth%20Slide'}
+        {title: 'slide 1', description: 'description of slide 1', src: 'https://placehold.it/1200x600?text=First%20Slide'},
+        {title: 'slide 2', description: 'description of slide 2', src: 'https://placehold.it/1200x600?text=Second%20Slide'},
+        {title: 'slide 3', description: 'description of slide 3', src: 'https://placehold.it/1200x600?text=Third%20Slide'},
+        {title: 'slide 4', description: 'description of slide 4', src: 'https://placehold.it/1200x600?text=Fourth%20Slide'}
       ]
     }
   }
