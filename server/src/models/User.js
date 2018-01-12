@@ -4,5 +4,9 @@ module.exports = (sequilize, DataTypes) =>
       type: DataTypes.STRING,
       unique: true
     },
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    admin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
   })

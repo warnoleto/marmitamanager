@@ -4,7 +4,7 @@
     <router-link tag="li" v-for="itm in routes" :key="itm.path"  :to="itm.path" active-class="active" :exact="true">
       <a v-text="itm.label"></a>
     </router-link>
-    <signin slot="right" class="navbar-form navbar-right" ></signin>
+    <signin slot="right" class="navbar-form" ></signin>
   </navbar>
 </template>
 
