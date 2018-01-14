@@ -7,7 +7,8 @@ module.exports = {
     options: {
       dialect: process.env.DIALECT || 'sqlite',
       host: process.env.HOST || 'localhost',
-      storage: './marmitamanager.sqlite'
+      storage: './marmitamanager.sqlite',
+      operatorsAliases: false
     }
   }
 }

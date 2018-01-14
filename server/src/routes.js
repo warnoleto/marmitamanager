@@ -1,13 +1,7 @@
-module.exports = (app) => {
-  app.get('/status', (req, res) => {
-    res.send({
-      message: 'this server is perfectly running!'
-    })
-  })
+const AuthenticationController = require('./controllers/AuthenticationController')
+const AuthenticationControllerPolicy = require('./policies/AuthenticationControllerPolicy')
 
-  app.post('/register', (req, res) => {
-    res.send({
-      message: `user ${req.body.email} registered!`
-    })
-  })
+module.exports = (app) => {
+  app.post('/register', AuthenticationControllerPolicy.register,
+    AuthenticationController.register)
 }
