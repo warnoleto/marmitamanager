@@ -19,6 +19,7 @@ Vue.component('tab', VueStrap.tab)
 Vue.component('datepicker', VueStrap.datepicker)
 Vue.component('carousel', VueStrap.carousel)
 Vue.component('slider', VueStrap.slider)
+Vue.component('alert', VueStrap.alert)
 
 /* eslint-disable no-new */
 new Vue({
