@@ -34,9 +34,8 @@ module.exports = {
       if (!user) {
         return invalidCredentials(res)
       }
-      const isValidPassword = password === user.password
 
-      if (!isValidPassword) {
+      if (!user.comparePassword(password)) {
         return invalidCredentials(res)
       }
 
@@ -47,6 +46,7 @@ module.exports = {
         token: jwtSignUser(userJson)
       })
     } catch (err) {
+      console.log(err)
       return res.status(500).send('An Error ocurred trying to log in.')
     }
   }
