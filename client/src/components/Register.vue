@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <form class="col-md-4 col-md-offset-4">
+    <form class="col-md-4 col-md-offset-4" autocomplete="off">
       <h1>Registrar-se</h1>
       
       <bs-input name="email" label="Endereço de Email" v-model="email" type="email" placeholder="E-mail" required error="Informe o email" icon/>
       
-      <bs-input name="password" label="Password" v-model="password" type="password" placeholder="Password" required error="Informe o password" icon/>
+      <bs-input name="password" label="Password" v-model="password" type="password" placeholder="Password" required error="Informe o password" icon aria-autocomplete="off"/>
 
       <button @click.prevent="register" type="submit" class="btn btn-primary">Enviar</button> 
 

@@ -10,5 +10,8 @@ module.exports = {
       storage: './marmitamanager.sqlite',
       operatorsAliases: false
     }
+  },
+  authentication: {
+    jwtSecret: process.env.JWT_SECRET || 'secret'
   }
 }

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Startup from '@/components/Startup'
+import Login from '@/components/Login'
 import Register from '@/components/Register'
 import ThePlace from '@/components/ThePlace'
 import Services from '@/components/Services'
@@ -28,10 +29,18 @@ export default new Router({
       label: 'Serviços'
     },
     {
+      path: '/login',
+      name: 'login',
+      component: Login,
+      label: 'Entrar',
+      slot: 'right'
+    },
+    {
       path: '/register',
       name: 'register',
       component: Register,
-      label: 'Registrar-se'
+      label: 'Registrar-se',
+      slot: 'right'
     }
   ]
 })
