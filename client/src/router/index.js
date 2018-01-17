@@ -33,14 +33,16 @@ export default new Router({
       name: 'login',
       component: Login,
       label: 'Entrar',
-      slot: 'right'
+      slot: 'right',
+      hideIfAuthenticated: true
     },
     {
       path: '/register',
       name: 'register',
       component: Register,
       label: 'Registrar-se',
-      slot: 'right'
+      slot: 'right',
+      hideIfAuthenticated: true
     }
   ]
 })

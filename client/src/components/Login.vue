@@ -16,7 +16,6 @@
 </template>
 
 <script>
-
 import AuthenticationService from '@/services/AuthenticationService'
 
 export default {
@@ -30,8 +29,15 @@ export default {
   },
   methods: {
     async login () {
-      const response = await AuthenticationService.login({email: this.email, password: this.password})
-      console.log(response.data)
+      try {
+        const response = await AuthenticationService.login({
+          email: this.email,
+          password: this.password
+        })
+        this.$store.dispatch('setToken', response.data.token)
+      } catch (error) {
+        this.error = error.response.data.error
+      }
     }
   }
 }

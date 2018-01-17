@@ -7,6 +7,10 @@ import router from './router'
 import VueStrap from 'vue-strap'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
+import {sync} from 'vuex-router-sync'
+import store from '@/store/store'
+
+sync(store, router)
 
 Vue.config.productionTip = false
 Vue.component('navbar', VueStrap.navbar)
@@ -25,6 +29,7 @@ Vue.component('alert', VueStrap.alert)
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
