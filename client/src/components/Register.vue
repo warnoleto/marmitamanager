@@ -34,9 +34,9 @@ export default {
           email: this.email,
           password: this.password
         })
+        this.$store.dispatch('setAuthenticationInfo', response.data)
         this.error = null
-        // eslint-disable-next-line
-        console.log(response.data)
+        this.$router.push('/')
       } catch (error) {
         this.error = error.response.data.error
       }
