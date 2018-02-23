@@ -8,8 +8,10 @@ module.exports = (app) => {
   app.post('/register', AuthenticationControllerPolicy.register,
     AuthenticationController.register)
   app.post('/authenticate', AuthenticationController.authenticate)
+
   app.post('/category', CategoryControllerPolicy.create, CategoryController.create)
   app.put('/category/:id', CategoryControllerPolicy.update, CategoryController.update)
   app.delete('/category/:id', CategoryController.delete)
   app.get('/category', CategoryController.findAll)
+  app.get('/category/:id', CategoryController.findById)
 }

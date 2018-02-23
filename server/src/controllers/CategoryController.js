@@ -74,6 +74,26 @@ module.exports = {
         error: `Can't delete the cathegory!`
       })
     }
+  },
+
+  async findById (req, res) {
+    const id = parseInt(req.params.id)
+    try {
+      const category = await Category.findById(id)
+      if (category) {
+        res.send({
+          category: category.toJSON()
+        })
+      } else {
+        res.status(404).send({
+          error: 'Category not found'
+        })
+      }
+    } catch (err) {
+      res.status(400).send({
+        error: `Can't load the category!`
+      })
+    }
   }
 
 }
