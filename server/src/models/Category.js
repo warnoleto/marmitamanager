@@ -17,15 +17,5 @@ module.exports = (sequelize, DataTypes) => {
     }
   })
 
-  const Option = sequelize.define('Option', {
-    description: {
-      type: DataTypes.STRING(60),
-      allowNull: false
-    }
-  })
-
-  Option.Category = Option.belongsTo(Category)
-  Category.Option = Category.hasMany(Option, {as: 'options'})
-
   return Category
 }

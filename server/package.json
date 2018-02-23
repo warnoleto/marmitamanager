@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "seed": "node seed",
     "start": "nodemon src/app.js --exec \"npm run lint && node\"",
     "lint": "eslint **/*.js"
   },

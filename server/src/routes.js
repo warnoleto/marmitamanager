@@ -4,6 +4,9 @@ const AuthenticationControllerPolicy = require('./policies/AuthenticationControl
 const CategoryController = require('./controllers/CategoryController')
 const CategoryControllerPolicy = require('./policies/CategoryControllerPolicy')
 
+const OptionController = require('./controllers/OptionController')
+const OptionControllerPolicy = require('./policies/OptionControllerPolicy')
+
 module.exports = (app) => {
   app.post('/register', AuthenticationControllerPolicy.register,
     AuthenticationController.register)
@@ -14,4 +17,10 @@ module.exports = (app) => {
   app.delete('/category/:id', CategoryController.delete)
   app.get('/category', CategoryController.findAll)
   app.get('/category/:id', CategoryController.findById)
+
+  app.post('/option', OptionControllerPolicy.create, OptionController.create)
+  app.put('/option/:id', OptionControllerPolicy.update, OptionController.update)
+  app.delete('/option/:id', OptionController.delete)
+  app.get('/option', OptionController.findAll)
+  app.get('/option/:id', OptionController.findById)
 }

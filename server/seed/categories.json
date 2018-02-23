@@ -1,0 +1,17 @@
+[
+    {
+        "description": "Guarnição",
+        "position": 1,
+        "maxAllowed": 2
+    },
+    {
+        "description": "Salada",
+        "position": 2,
+        "maxAllowed": 2
+    },
+    {
+        "description": "Proteina",
+        "position": 3,
+        "maxAllowed": 2
+    }
+]

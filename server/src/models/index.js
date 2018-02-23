@@ -59,6 +59,12 @@ fs
     db[model.name] = model
   })
 
+Object.keys(db).forEach(element => {
+  if ('associate' in db[element]) {
+    db[element].associate(db)
+  }
+})
+
 db.sequelize = sequelize
 db.Sequelize = Sequelize
 

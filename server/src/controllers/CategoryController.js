@@ -42,9 +42,21 @@ module.exports = {
 
   async findAll (req, res) {
     try {
-      const listdata = await Category.findAll({
-        orderBy: 'position'
-      })
+      let listdata = null
+
+      if (req.query.search) {
+        const search = req.query.search
+        listdata = await Category.findAll({
+          where: {
+            description: {$like: `%${search}%`}
+          },
+          orderBy: 'position'
+        })
+      } else {
+        listdata = await Category.findAll({
+          orderBy: 'position'
+        })
+      }
       res.send({list: listdata})
     } catch (err) {
       res.status(400).send({

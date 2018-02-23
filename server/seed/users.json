@@ -1,0 +1,12 @@
+[
+    {
+        "email": "admin@marmitamanager.com",
+        "password": "mm-admin",
+        "admin": true
+    },
+    {
+        "email": "demo@marmitamanager.com",
+        "password": "demo",
+        "admin": false
+    }
+]
