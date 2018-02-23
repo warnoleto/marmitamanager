@@ -48,7 +48,9 @@ module.exports = {
         const search = req.query.search
         listdata = await Category.findAll({
           where: {
-            description: {$like: `%${search}%`}
+            description: {
+              $like: `%${search}%`
+            }
           },
           orderBy: 'position'
         })
