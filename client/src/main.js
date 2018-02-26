@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 import {sync} from 'vuex-router-sync'
 import store from '@/store/store'
+import {ServerTable, ClientTable} from 'vue-tables-2'
 
 sync(store, router)
 
@@ -24,6 +25,13 @@ Vue.component('datepicker', VueStrap.datepicker)
 Vue.component('carousel', VueStrap.carousel)
 Vue.component('slider', VueStrap.slider)
 Vue.component('alert', VueStrap.alert)
+
+const tableDefaultOptions = {
+  clientMultiSorting: false
+}
+
+Vue.use(ClientTable, tableDefaultOptions, true, 'bootstrap3', 'footerPagination')
+Vue.use(ServerTable, tableDefaultOptions, true, 'bootstrap3', 'footerPagination')
 
 /* eslint-disable no-new */
 new Vue({

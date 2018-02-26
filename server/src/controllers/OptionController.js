@@ -55,7 +55,10 @@ module.exports = {
         listdata = await Option.findAll()
       }
 
-      res.send({list: listdata})
+      res.send({
+        data: listdata,
+        count: listdata.length
+      })
     } catch (err) {
       res.status(400).send({
         error: `Can't list all the options`

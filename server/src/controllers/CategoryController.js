@@ -44,12 +44,12 @@ module.exports = {
     try {
       let listdata = null
 
-      if (req.query.search) {
-        const search = req.query.search
+      if (req.query.query) {
+        const query = req.query.query
         listdata = await Category.findAll({
           where: {
             description: {
-              $like: `%${search}%`
+              $like: `%${query}%`
             }
           },
           orderBy: 'position'
@@ -59,7 +59,10 @@ module.exports = {
           orderBy: 'position'
         })
       }
-      res.send({list: listdata})
+      res.send({
+        data: listdata,
+        count: listdata.length
+      })
     } catch (err) {
       res.status(400).send({
         error: `Can't list all the categories`
