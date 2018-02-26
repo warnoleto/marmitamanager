@@ -43,7 +43,16 @@ module.exports = {
   async findAll (req, res) {
     try {
       let listdata = null
+      let orderBy = ['id', 'ASC']
 
+      if (req.query.orderBy) {
+        orderBy[0] = req.query.orderBy
+      }
+
+      if (req.query.ascending) {
+        orderBy[1] = req.query.ascending === '1' ? 'ASC' : 'DESC'
+      }
+      console.log(orderBy)
       if (req.query.query) {
         const query = req.query.query
         listdata = await Category.findAll({
@@ -52,11 +61,11 @@ module.exports = {
               $like: `%${query}%`
             }
           },
-          orderBy: 'position'
+          order: [orderBy]
         })
       } else {
         listdata = await Category.findAll({
-          orderBy: 'position'
+          order: [orderBy]
         })
       }
       res.send({
