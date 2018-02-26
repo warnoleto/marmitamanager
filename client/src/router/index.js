@@ -6,6 +6,8 @@ import Register from '@/components/Register'
 import ThePlace from '@/components/ThePlace'
 import Services from '@/components/Services'
 
+import CategoryList from '@/components/admin/category/Index'
+
 Vue.use(Router, Register)
 
 export default new Router({
@@ -13,36 +15,32 @@ export default new Router({
     {
       path: '/',
       name: 'startup',
-      component: Startup,
-      label: 'Início'
+      component: Startup
     },
     {
       path: '/theplace',
       name: 'theplace',
-      component: ThePlace,
-      label: 'Instalações'
+      component: ThePlace
     },
     {
       path: '/services',
       name: 'services',
-      component: Services,
-      label: 'Serviços'
+      component: Services
     },
     {
       path: '/login',
       name: 'login',
-      component: Login,
-      label: 'Entrar',
-      slot: 'right',
-      hideIfAuthenticated: true
+      component: Login
     },
     {
       path: '/register',
       name: 'register',
-      component: Register,
-      label: 'Registrar-se',
-      slot: 'right',
-      hideIfAuthenticated: true
+      component: Register
+    },
+    {
+      path: '/admin/category',
+      name: 'caterogylist',
+      component: CategoryList
     }
   ]
 })

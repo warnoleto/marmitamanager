@@ -31,6 +31,13 @@ export default new Vuex.Store({
       } else {
         return false
       }
+    },
+    isAdmin: state => {
+      if (state.user.admin) {
+        return true
+      } else {
+        return false
+      }
     }
   }
 })

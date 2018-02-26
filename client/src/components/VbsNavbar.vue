@@ -10,7 +10,7 @@
       <a>Serviços</a>
     </router-link>
 
-    <dropdown text="Administração" slot="right" v-if="isAuthenticated">
+    <dropdown text="Administração" slot="right" v-if="isAdmin">
       <router-link tag="li" to="/admin/category" active-class="active" :exact="true">
         <a>Categorias</a>
       </router-link>
@@ -57,6 +57,9 @@ export default {
     },
     isNotAuthenticated () {
       return !this.$store.getters.isAuthenticated
+    },
+    isAdmin () {
+      return this.$store.getters.isAdmin
     }
   },
   methods: {
