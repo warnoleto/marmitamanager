@@ -28,7 +28,7 @@
     </router-link>
 
     <li @click="logoff" slot="right" v-if="isAuthenticated">
-      <a>Sair</a>
+      <a href="#" >Sair</a>
     </li>
 
   </navbar>

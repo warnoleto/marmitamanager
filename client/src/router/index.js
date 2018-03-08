@@ -7,6 +7,7 @@ import ThePlace from '@/components/ThePlace'
 import Services from '@/components/Services'
 
 import CategoryList from '@/components/admin/category/Index'
+import CategoryNew from '@/components/admin/category/New'
 
 Vue.use(Router, Register)
 
@@ -41,6 +42,12 @@ export default new Router({
       path: '/admin/category',
       name: 'caterogylist',
       component: CategoryList
+    },
+    {
+      path: '/admin/category/new',
+      name: 'caterogyCreateForm',
+      component: CategoryNew
     }
+
   ]
 })

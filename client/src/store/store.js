@@ -33,7 +33,7 @@ export default new Vuex.Store({
       }
     },
     isAdmin: state => {
-      if (state.user.admin) {
+      if (state.user && state.user.admin) {
         return true
       } else {
         return false

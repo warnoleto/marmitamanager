@@ -5,6 +5,7 @@
     <vbs-navbar></vbs-navbar>
 
     <main role="main">
+      <p></p>
       <router-view/>
     </main>
 
