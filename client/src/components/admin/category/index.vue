@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       search: '',
-      gridColumns: ['id', 'description', 'position', 'maxAllowed'],
+      gridColumns: ['description', 'position', 'maxAllowed'],
       gridOptions: {
         requestFunction: CategoryService.findAll,
         headings: {

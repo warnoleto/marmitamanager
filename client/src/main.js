@@ -17,6 +17,7 @@ Vue.config.productionTip = false
 Vue.component('navbar', VueStrap.navbar)
 Vue.component('dropdown', VueStrap.dropdown)
 Vue.component('bs-input', VueStrap.input)
+Vue.component('form-validator', VueStrap.formValidator)
 Vue.component('modal', VueStrap.modal)
 Vue.component('v-select', VueStrap.select)
 Vue.component('tabs', VueStrap.tabs)
@@ -30,8 +31,8 @@ const tableDefaultOptions = {
   clientMultiSorting: false
 }
 
-Vue.use(ClientTable, tableDefaultOptions, true, 'bootstrap3', 'footerPagination')
-Vue.use(ServerTable, tableDefaultOptions, true, 'bootstrap3', 'footerPagination')
+Vue.use(ClientTable, tableDefaultOptions, false, 'bootstrap3', 'footerPagination')
+Vue.use(ServerTable, tableDefaultOptions, false, 'bootstrap3', 'footerPagination')
 
 /* eslint-disable no-new */
 new Vue({

@@ -12,7 +12,12 @@
         </div>
       </div>
       <div class="panel-body">
-        
+        <form-validator v-model="valid.all">
+          <bs-input label="Descrição" v-model="description" type="text" required :maxlength="30"></bs-input>
+          <bs-input label="Posição" v-model="position" type="number" required ></bs-input>
+          <bs-input label="Máximo Permitido" v-model="maxAllowed" type="number" required ></bs-input>
+        </form-validator>
+         <button type="button" class="btn btn-primary" :disabled="!valid.all" @click="salvar">Salvar</button>
       </div>
     </div>
   </div>
@@ -20,10 +25,30 @@
 
 <script>
 
+import CategoryService from '@/services/CategoryService'
+
 export default {
   name: 'category',
   data () {
     return {
+      valid: {},
+      description: '',
+      position: '1',
+      maxAllowed: '1'
+    }
+  },
+  methods: {
+    async salvar () {
+      try {
+        await CategoryService.create({
+          description: this.description,
+          position: this.position,
+          maxAllowed: this.maxAllowed
+        })
+        this.$router.push('/categorias')
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 }
