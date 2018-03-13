@@ -31,7 +31,7 @@ const tableDefaultOptions = {
   clientMultiSorting: false
 }
 
-Vue.use(ClientTable, tableDefaultOptions, false, 'bootstrap3', 'footerPagination')
+Vue.use(ClientTable, tableDefaultOptions, false, 'bootstrap3', 'default')
 Vue.use(ServerTable, tableDefaultOptions, false, 'bootstrap3', 'footerPagination')
 
 /* eslint-disable no-new */

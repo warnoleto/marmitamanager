@@ -3,7 +3,7 @@ import Api from './Api'
 export default {
   async findAll (params) {
     try {
-      var data = await Api().get(this.url, {
+      var data = await Api().get('category', {
         params: params
       })
       return data.data
