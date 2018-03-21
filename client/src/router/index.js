@@ -6,7 +6,7 @@ import Register from '@/components/Register'
 import ThePlace from '@/components/ThePlace'
 import Services from '@/components/Services'
 
-import CategoryList from '@/components/admin/category/Index'
+import CategoryList from '@/components/admin/category/Grid'
 import CategoryNew from '@/components/admin/category/New'
 
 Vue.use(Router, Register)

@@ -12,12 +12,17 @@
         </div>
       </div>
       <div class="panel-body">
-      <v-client-table name="categories" :data="categories" :columns="gridColumns" :options="gridOptions" >
-        <div slot="actions" slot-scope="props" >
-          <button class="btn btn-primary" >Edit</button>
-          <button class="btn btn-danger" >Remove</button>
-        </div>
-      </v-client-table>
+        <draggable element="ul"  v-model="categories" :options="draggableOptions" @end="onDragEnd" :move="onMove">
+          <li class="list-group-item" v-for="element in categories" :key="element.id">
+              <i class="glyphicon glyphicon-pushpin" aria-hidden="true"></i>
+              {{element.description}}
+              <span class="badge">{{element.position}}</span>
+          </li>
+          <div class="col text-right" slot="footer" >
+            <br>
+            <button class="btn btn-sm btn-primary" @click="addCategory">Criar Novo</button>
+          </div>
+        </draggable>
       </div>
     </div>
   </div>
@@ -26,21 +31,31 @@
 <script>
 
 import CategoryService from '@/services/CategoryService'
+import draggable from 'vuedraggable'
 
 export default {
   name: 'category',
+  components: {
+    draggable
+  },
   data () {
     return {
       categories: [],
-      gridColumns: ['description', 'position', 'maxAllowed', 'actions'],
-      gridOptions: {
-        requestFunction: CategoryService.findAll,
-        headings: {
-          description: 'Descrição',
-          position: 'Posição',
-          maxAllowed: 'Seleção Máxima'
-        }
+      draggableOptions: {
+        ghostClass: 'ghost'
       }
+    }
+  },
+  methods: {
+    addCategory () {
+      console.log('addCategory')
+    },
+    onDragEnd ({newIndex, oldIndex}) {
+      console.log('dragEnded')
+    },
+    onMove (event) {
+      console.log('onMove')
+      return true
     }
   },
   async mounted () {
@@ -52,5 +67,23 @@ export default {
 </script>
 
 <style scoped>
-
+.flip-list-move {
+  transition: transform 0.5s;
+}
+.no-move {
+  transition: transform 0s;
+}
+.ghost {
+  opacity: .5;
+  background: #C8EBFB;
+}
+.list-group {
+  min-height: 20px;
+}
+.list-group-item {
+  cursor: move;
+}
+.list-group-item i{
+  cursor: pointer;
+}
 </style>

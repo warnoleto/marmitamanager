@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css'
 import {sync} from 'vuex-router-sync'
 import store from '@/store/store'
 import {ServerTable, ClientTable} from 'vue-tables-2'
+import draggable from 'vuedraggable'
 
 sync(store, router)
 
@@ -26,6 +27,7 @@ Vue.component('datepicker', VueStrap.datepicker)
 Vue.component('carousel', VueStrap.carousel)
 Vue.component('slider', VueStrap.slider)
 Vue.component('alert', VueStrap.alert)
+Vue.component('draggable', draggable)
 
 const tableDefaultOptions = {
   clientMultiSorting: false
