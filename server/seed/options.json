@@ -1,0 +1,18 @@
+[
+    {
+        "description": "blablabla",
+        "position": 1,
+        "CategoryId": 1
+    },
+    {
+        "description": "blablabla2",
+        "position": 2,
+        "CategoryId": 1
+    },
+    {
+        "description": "Frango Frito",
+        "position": 1,
+        "CategoryId": 3
+    }
+
+]

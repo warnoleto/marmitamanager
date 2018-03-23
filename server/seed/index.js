@@ -1,8 +1,9 @@
-const {sequelize, Category, User} = require('../src/models')
+const {sequelize, Category, User, Option} = require('../src/models')
 
 const Promise = require('bluebird')
 const users = require('./users.json')
 const categories = require('./categories.json')
+const options = require('./options.json')
 
 sequelize.sync({force: true})
   .then(async function () {
@@ -12,5 +13,9 @@ sequelize.sync({force: true})
 
     await Promise.all(categories.map(category => {
       Category.create(category)
+    }))
+
+    await Promise.all(options.map(option => {
+      Option.create(option)
     }))
   })

@@ -1,4 +1,4 @@
-const { Category } = require('../models')
+const { Category, Option } = require('../models')
 
 module.exports = {
   async create (req, res) {
@@ -61,11 +61,13 @@ module.exports = {
               $like: `%${query}%`
             }
           },
-          order: [orderBy]
+          order: [orderBy],
+          include: [{model: Option, as: 'options'}]
         })
       } else {
         listdata = await Category.findAll({
-          order: [orderBy]
+          order: [orderBy],
+          include: [{model: Option, as: 'options'}]
         })
       }
       res.send({
