@@ -47,6 +47,10 @@ export default new Router({
       path: '/admin/category/new',
       name: 'caterogyCreateForm',
       component: CategoryNew
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
 
   ]
